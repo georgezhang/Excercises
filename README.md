@@ -32,4 +32,3 @@ This is a .net MVC project connected to database remotely with SQL authenticatio
 3. Gold
 
 # Contacts
-![微信群](/Excercises/Content/mmqrcode.png "微信群")
