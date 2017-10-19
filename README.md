@@ -4,8 +4,8 @@
 
 ## Chinese 中文
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=NtGRqajrjfY
-" target="_blank"><img src="http://img.youtube.com/vi/NtGRqajrjfY/default.jpg" 
-alt="Project Excercise Development Environment Setup" width="240" height="180" border="10" /></a>
+" target="_blank">**开发环境说明**</br><img src="http://img.youtube.com/vi/NtGRqajrjfY/default.jpg" 
+alt="Project Excercise Development Environment Setup" width="120" height="90" border="1" /></a>
 
 # Requirements
 
@@ -30,3 +30,6 @@ This is a .net MVC project connected to database remotely with SQL authenticatio
 2. Silver
   * 
 3. Gold
+
+# Contacts
+![微信群](/Excercises/Content/mmqrcode.png "微信群")
