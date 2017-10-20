@@ -2,6 +2,11 @@
 
 ## Videos
 
+### English
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://youtu.be/vaTrdHqMHpU
+" target="_blank">**Project Excercise Development Environment Setup**</br><img src="http://img.youtube.com/vi/https://youtu.be/vaTrdHqMHpU/default.jpg" 
+alt="Project Excercise Development Environment Setup" width="120" height="90" border="1" /></a>
+
 ### Chinese 中文
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=NtGRqajrjfY
 " target="_blank">**开发环境说明**</br><img src="http://img.youtube.com/vi/NtGRqajrjfY/default.jpg" 
