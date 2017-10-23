@@ -18,16 +18,16 @@ namespace Excercises.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationUsersDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationUsersDbContext()
+            : base("ExcercisesUsersDB", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static ApplicationUsersDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new ApplicationUsersDbContext();
         }
     }
 }
