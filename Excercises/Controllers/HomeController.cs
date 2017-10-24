@@ -10,6 +10,7 @@ namespace Excercises.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.isFullScreen = true;
             return View();
         }
 

@@ -1,0 +1,28 @@
+﻿@model Excercises.Models.PlaygroundViewModels
+
+@{
+    ViewBag.Title = "StoredProcedure";
+}
+
+<h2>Stored Procedure</h2>
+
+<h3>Peple</h3>
+@foreach (var p in Model.people)
+{
+    <ul>
+        <li>
+            @Html.DisplayFor(_ => p.FirstName)
+        </li>
+    </ul>
+}
+
+<h3>Person</h3>
+<ul>
+    <li>
+        @Html.DisplayFor(_ => Model.person.FirstName)
+    </li>
+</ul>
+
+<h3>2 persons</h3>
+<p>@Html.DisplayFor(_ => Model.persons.Item1.First().FirstName)</p>
+<p>@Html.DisplayFor(_ => Model.persons.Item2.First().FirstName)</p>
