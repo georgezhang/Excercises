@@ -3,15 +3,30 @@
 ## Videos
 
 ### English
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=vaTrdHqMHpU" target="_blank">**Project Excercise Development Environment Setup**</br><img src="http://img.youtube.com/vi/vaTrdHqMHpU/default.jpg" 
+<table>
+<tr><td>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=vaTrdHqMHpU" target="_blank">**Project Excercise Development<br/> Environment Setup**</br><img src="http://img.youtube.com/vi/vaTrdHqMHpU/default.jpg" 
 alt="Project Excercise Development Environment Setup" width="120" height="90" border="1" /></a>
-
+</td><td>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=HbPgVxJA8Vk" target="_blank">**Project Excercises Task list<br/> and database connection methods**</br><img src="http://img.youtube.com/vi/HbPgVxJA8Vk/default.jpg" 
+alt="Project Excercises Task list and database connection methods" width="120" height="90" border="1" /></a>
+</td></tr>
+</table>
 ### Chinese 中文
+<table>
+<tr><td>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=NtGRqajrjfY
 " target="_blank">**开发环境说明**</br><img src="http://img.youtube.com/vi/NtGRqajrjfY/default.jpg" 
 alt="Project Excercise Development Environment Setup" width="120" height="90" border="1" /></a>
+</td><td>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=l81uc3ItwNY
+" target="_blank">**题库项目任务说明<br/>与数据库连接方法**</br><img src="http://img.youtube.com/vi/l81uc3ItwNY/default.jpg" 
+alt="题库项目任务说明与数据库连接方法" width="120" height="90" border="1" /></a>
+</td></tr>
+</table>
 
 ## Requirements
+
 
 This project is to build an online exam service that user can create their own exam series with question and answer. 
 
