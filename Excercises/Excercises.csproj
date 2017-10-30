@@ -59,6 +59,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -196,18 +198,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Examples\ExamplePersonCodeFirstController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PlaygroundController.cs" />
+    <Compile Include="Controllers\Examples\PlaygroundController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ApplicationModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\PlaygroundRepository.cs" />
-    <Compile Include="Models\PlaygroundViewModels.cs" />
+    <Compile Include="Models\AccountModels\AccountViewModels.cs" />
+    <Compile Include="Models\Examples\Example_StoreProcedure\ApplicationModels.cs" />
+    <Compile Include="Models\Examples\Example_CodeFirstModels\Model1.cs" />
+    <Compile Include="Models\Examples\Example_CodeFirstModels\Person.cs" />
+    <Compile Include="Models\Examples\Example_DataSets\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels\IdentityModels.cs" />
+    <Compile Include="Models\AccountModels\ManageViewModels.cs" />
+    <Compile Include="Models\Examples\Example_StoreProcedure\PlaygroundRepository.cs" />
+    <Compile Include="Models\ViewModels\PlaygroundViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -338,6 +348,17 @@
     <Content Include="Content\flameonepage-gh-pages\vendor\simple-line-icons\fonts\Simple-Line-Icons.eot" />
     <Content Include="Content\flameonepage-gh-pages\vendor\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\flameonepage-gh-pages\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Models\Examples\Example_DataSets\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Models\Examples\Example_DataSets\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Models\Examples\Example_DataSets\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -387,6 +408,11 @@
     <Content Include="Views\Playground\StoredProcedure.cshtml" />
     <Content Include="Views\Home\Index_bk.cshtml" />
     <Content Include="Views\Shared\_ViewStart.cshtml" />
+    <Content Include="Views\ExamplePersonCodeFirst\Create.cshtml" />
+    <Content Include="Views\ExamplePersonCodeFirst\Delete.cshtml" />
+    <Content Include="Views\ExamplePersonCodeFirst\Details.cshtml" />
+    <Content Include="Views\ExamplePersonCodeFirst\Edit.cshtml" />
+    <Content Include="Views\ExamplePersonCodeFirst\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -404,6 +430,15 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcercisesDAL\ExcercisesDAL.csproj">
+      <Project>{2e531874-c0ea-4cac-ba60-124c2841cb5d}</Project>
+      <Name>ExcercisesDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

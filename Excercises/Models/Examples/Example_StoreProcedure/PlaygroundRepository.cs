@@ -52,7 +52,7 @@ namespace Excercises.Models
         {
             try
             {
-                return db.Execute().usp_Get2Person(PersonID1: personID1, PersonID2: personID2);
+                return db.Execute(timeout).usp_Get2Person(PersonID1: personID1, PersonID2: personID2);
             }
             catch (Exception e)
             {
