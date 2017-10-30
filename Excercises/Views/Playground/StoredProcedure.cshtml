@@ -9,16 +9,16 @@
 <h3>Peple</h3>
 @foreach (var p in Model.people)
 {
-    <ul>
-        <li>
+    <ul class="list-group">
+        <li class="list-group-item">
             @Html.DisplayFor(_ => p.FirstName)
         </li>
     </ul>
 }
 
 <h3>Person</h3>
-<ul>
-    <li>
+<ul class="list-group">
+    <li class="list-group-item">
         @Html.DisplayFor(_ => Model.person.FirstName)
     </li>
 </ul>

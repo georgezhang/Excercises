@@ -17,7 +17,8 @@ namespace Excercises.Models
         /* !!!
          *  This is not DBContext, it is IDbConnection. 
          */
-        public const int timeout = 1000;
+        public const int timeout = 5000; // 5 seconds
+
         private IDbConnection db = (new ApplicationDBContext()).Database.Connection;
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
