@@ -6,21 +6,21 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Excercises.Models.CodeFirstModels;
+using Excercises.Models;
 
 namespace Excercises.Controllers.Examples
 {
-    public class ExamplePersonCodeFirstController : Controller
+    public class ExamplePersonController : Controller
     {
-        private Model1 db = new Model1();
+        private ApplicationDBContext db = new ApplicationDBContext();
 
-        // GET: ExamplePersonCodeFirst
+        // GET: ExamplePerson
         public ActionResult Index()
         {
             return View(db.Persons.ToList());
         }
 
-        // GET: ExamplePersonCodeFirst/Details/5
+        // GET: ExamplePerson/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +35,18 @@ namespace Excercises.Controllers.Examples
             return View(person);
         }
 
-        // GET: ExamplePersonCodeFirst/Create
+        // GET: ExamplePerson/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ExamplePersonCodeFirst/Create
+        // POST: ExamplePerson/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LastName,FirstName,Address,City")] Person person)
+        public ActionResult Create([Bind(Include = "PersonID,LastName,FirstName,Address,City")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace Excercises.Controllers.Examples
             return View(person);
         }
 
-        // GET: ExamplePersonCodeFirst/Edit/5
+        // GET: ExamplePerson/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace Excercises.Controllers.Examples
             return View(person);
         }
 
-        // POST: ExamplePersonCodeFirst/Edit/5
+        // POST: ExamplePerson/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace Excercises.Controllers.Examples
             return View(person);
         }
 
-        // GET: ExamplePersonCodeFirst/Delete/5
+        // GET: ExamplePerson/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace Excercises.Controllers.Examples
             return View(person);
         }
 
-        // POST: ExamplePersonCodeFirst/Delete/5
+        // POST: ExamplePerson/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -198,7 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Examples\ExamplePersonCodeFirstController.cs" />
+    <Compile Include="Controllers\Examples\ExamplePersonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Examples\PlaygroundController.cs" />
@@ -206,9 +206,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels\AccountViewModels.cs" />
-    <Compile Include="Models\Examples\Example_StoreProcedure\ApplicationModels.cs" />
-    <Compile Include="Models\Examples\Example_CodeFirstModels\Model1.cs" />
     <Compile Include="Models\Examples\Example_CodeFirstModels\Person.cs" />
+    <Compile Include="Models\ApplicationModels.cs" />
     <Compile Include="Models\Examples\Example_DataSets\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -370,7 +369,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -408,14 +409,15 @@
     <Content Include="Views\Playground\StoredProcedure.cshtml" />
     <Content Include="Views\Home\Index_bk.cshtml" />
     <Content Include="Views\Shared\_ViewStart.cshtml" />
-    <Content Include="Views\ExamplePersonCodeFirst\Create.cshtml" />
-    <Content Include="Views\ExamplePersonCodeFirst\Delete.cshtml" />
-    <Content Include="Views\ExamplePersonCodeFirst\Details.cshtml" />
-    <Content Include="Views\ExamplePersonCodeFirst\Edit.cshtml" />
-    <Content Include="Views\ExamplePersonCodeFirst\Index.cshtml" />
+    <Content Include="Views\ExamplePerson\Create.cshtml" />
+    <Content Include="Views\ExamplePerson\Delete.cshtml" />
+    <Content Include="Views\ExamplePerson\Details.cshtml" />
+    <Content Include="Views\ExamplePerson\Edit.cshtml" />
+    <Content Include="Views\ExamplePerson\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
@@ -433,12 +435,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExcercisesDAL\ExcercisesDAL.csproj">
-      <Project>{2e531874-c0ea-4cac-ba60-124c2841cb5d}</Project>
-      <Name>ExcercisesDAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

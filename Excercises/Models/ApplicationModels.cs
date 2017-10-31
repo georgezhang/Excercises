@@ -3,21 +3,12 @@ using System.Data.Entity;
 
 namespace Excercises.Models
 {
-    public class Person
-    {
-        public int PersonID { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-    }
-
     public class ApplicationDBContext : DbContext
     {
         public ApplicationDBContext() : base("ExcercisesDB")
         {
             //Disable initializer
-            Database.SetInitializer<ApplicationDBContext>(null);
+            //Database.SetInitializer<ApplicationDBContext>(null);
         }
         /* !!!
          * You can define your data sets here directly which is
@@ -30,6 +21,10 @@ namespace Excercises.Models
          *  Install-Package CodeOnlyStoredProcedures
          *  
          */
-        //public DbSet<Student> Students { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+        }
     }
 }

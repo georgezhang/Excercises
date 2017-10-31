@@ -1,4 +1,4 @@
-namespace Excercises.Models.CodeFirstModels
+namespace Excercises.Models
 {
     using System;
     using System.Collections.Generic;
@@ -8,9 +8,7 @@ namespace Excercises.Models.CodeFirstModels
 
     [Table("Persons")]
     public partial class Person
-    {   
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    {
         public int PersonID { get; set; }
 
         [StringLength(255)]
