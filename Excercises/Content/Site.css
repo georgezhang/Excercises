@@ -11,3 +11,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.color-black {
+    color: #eeeeee;
+    font-size: xx-large;
+}
+
+.carousel-centered {
+    border-radius: 5px;
+    padding: 30px;
+    background-color: rgba(94, 156, 210, 0.89);
+}
