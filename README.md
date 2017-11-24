@@ -38,7 +38,7 @@ This project is to build an online exam service that user can create their own e
 
 
 ## Technical Specification
-This is a .net MVC project connected to database remotely with SQL authentication. It will use Entity Framework Database First to map tables/views to our codes.
+This is a .net MVC project connected to database. It will use Entity Framework Code First to map tables/views to our codes. We will use stored procedure to get data as well.
 
 This service will implement on IIS web server. 
 

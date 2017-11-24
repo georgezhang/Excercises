@@ -6,7 +6,7 @@ namespace Excercises.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Persons")]
+    [Table("Person")]
     public partial class Person
     {
         public int PersonID { get; set; }

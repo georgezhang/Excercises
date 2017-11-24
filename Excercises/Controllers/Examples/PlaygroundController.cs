@@ -22,34 +22,35 @@ namespace Excercises.Controllers
         // GET: Example of Store procedure
         public ActionResult StoredProcedure()
         {
+            //view model
+            PlaygroundViewModels viewModels = new PlaygroundViewModels();
+
             // 1. return a table
             IEnumerable<Person> people = repo.GetPeople();
-
-            //first and second person ID
-            int firstID = 0, secondID = 0;
+            int count = people.Count();
 
             Person[] peopleArray = people.ToArray();
-            if (peopleArray.Length > 0)
+            if (count > 0)
             {
-                firstID = peopleArray[0].PersonID;
-                secondID = peopleArray[1].PersonID;
+                viewModels.people = people;
+
+                int firstID = peopleArray[0].PersonID;
+
+                // 2. return one person
+                IEnumerable<Person> iePerson = repo.GetPerson(firstID);
+                viewModels.person = iePerson.First();
+
+                if (count > 1)
+                {
+                    int secondID = peopleArray[1].PersonID;
+                    // 3. return two persons
+                    Tuple<IEnumerable<Person>, IEnumerable<Person>> persons = repo.Get2Person(firstID, secondID);
+                    viewModels.persons = persons;
+                }
+
             }
 
-
-            // 2. return one person
-            IEnumerable<Person> iePerson = repo.GetPerson(firstID);
-
-            // 3. return two persons
-            Tuple<IEnumerable<Person>, IEnumerable<Person>> persons = repo.Get2Person(firstID, secondID);
-
-            PlaygroundViewModels playgroundViewModels = new PlaygroundViewModels
-            {
-                people = people,
-                person = iePerson.First(),
-                persons = persons
-            };
-
-            return View(playgroundViewModels);
+            return View(viewModels);
         }
     }
 }

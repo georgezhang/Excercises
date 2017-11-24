@@ -1,0 +1,14 @@
+2017-10-23 13:48:25.0964|ERROR|Excercises.Models.PlaygroundRepository|No columns with name PersonID, LastName, FirstName, Address, or City were found in the result set for type Person.
+This property will be ignored if it is decorated with a NotMappedAttribute.
+You can also map the property to a different column in the result set with the ColumnAttribute.
+If the stored procedure can sometimes return the column, decorate the column with the OptionalAttribute.
+2017-10-23 13:50:51.7898|ERROR|Excercises.Models.PlaygroundRepository|CodeOnlyStoredProcedure.StoredProcedureResultsException: No columns with name PersonID, LastName, FirstName, Address, or City were found in the result set for type Person.
+This property will be ignored if it is decorated with a NotMappedAttribute.
+You can also map the property to a different column in the result set with the ColumnAttribute.
+If the stored procedure can sometimes return the column, decorate the column with the OptionalAttribute.
+   at CodeOnlyStoredProcedure.RowFactory.ComplexTypeRowFactory`1.CreateRowFactory(IDataReader reader, IEnumerable`1 xFormers)
+   at CodeOnlyStoredProcedure.RowFactory`1.ParseRows(IDataReader reader, IEnumerable`1 dataTransformers, CancellationToken token)
+   at CodeOnlyStoredProcedure.Dynamic.DynamicStoredProcedureResults.GetResults[T](Boolean isSingle)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Excercises.Models.PlaygroundRepository.GetPeople() in D:\github\Excercises\Excercises\Models\PlaygroundRepository.cs:line 28

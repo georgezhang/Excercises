@@ -22,3 +22,6 @@ textarea {
     padding: 30px;
     background-color: rgba(94, 156, 210, 0.89);
 }
+#logoutForm li {
+    float: left;
+}

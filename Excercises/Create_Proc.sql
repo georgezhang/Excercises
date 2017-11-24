@@ -1,6 +1,6 @@
-﻿IF not exists (select * from sysobjects where name='Persons' and xtype='U')
+﻿IF not exists (select * from sysobjects where name='Person' and xtype='U')
 BEGIN
-	CREATE TABLE [dbo].[Persons](
+	CREATE TABLE [dbo].[Person](
 		[PersonID] [int] IDENTITY(1,1) NOT NULL,
 		[LastName] [varchar](255) NULL,
 		[FirstName] [varchar](255) NULL,
@@ -22,7 +22,7 @@ as
 			,[FirstName]
 			,[Address]
 			,[City]
-		FROM [dbo].[Persons]
+		FROM [dbo].[Person]
 		where PersonID = @PersonID1
 		;
 
@@ -31,7 +31,7 @@ as
 			,[FirstName]
 			,[Address]
 			,[City]
-		FROM [dbo].[Persons]
+		FROM [dbo].[Person]
 		where PersonID = @PersonID2
 GO
 CREATE proc [dbo].[usp_GetPeople] 
@@ -42,7 +42,7 @@ SELECT [PersonID]
 		,[FirstName]
 		,[Address]
 		,[City]
-	FROM [dbo].[Persons]
+	FROM [dbo].[Person]
 GO
 CREATE proc [dbo].[usp_GetPerson] 
 @PersonID INT
@@ -53,6 +53,6 @@ set nocount on
 			,[FirstName]
 			,[Address]
 			,[City]
-		FROM [dbo].[Persons]
+		FROM [dbo].[Person]
 		where PersonID = @PersonID
 GO
