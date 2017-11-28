@@ -204,9 +204,19 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Examples\PlaygroundController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711242040312_InitialCreate.cs" />
+    <Compile Include="Migrations\201711242040312_InitialCreate.Designer.cs">
+      <DependentUpon>201711242040312_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711281845586_Add Quetion Model.cs" />
+    <Compile Include="Migrations\201711281845586_Add Quetion Model.Designer.cs">
+      <DependentUpon>201711281845586_Add Quetion Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels\AccountViewModels.cs" />
     <Compile Include="Models\App\Exam.cs" />
     <Compile Include="Models\Examples\Example_CodeFirstModels\Person.cs" />
@@ -215,6 +225,7 @@
     <Compile Include="Models\AccountModels\ManageViewModels.cs" />
     <Compile Include="Models\Examples\Example_StoreProcedure\PlaygroundRepository.cs" />
     <Compile Include="Models\ModelHelpers\UserExtension.cs" />
+    <Compile Include="Models\Question.cs" />
     <Compile Include="Models\ViewModels\PlaygroundViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -406,10 +417,14 @@
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\Index.cshtml" />
+    <Content Include="Views\Questions\Create.cshtml" />
+    <Content Include="Views\Questions\Delete.cshtml" />
+    <Content Include="Views\Questions\Details.cshtml" />
+    <Content Include="Views\Questions\Edit.cshtml" />
+    <Content Include="Views\Questions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Tools\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
@@ -428,6 +443,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711242040312_InitialCreate.resx">
+      <DependentUpon>201711242040312_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711281845586_Add Quetion Model.resx">
+      <DependentUpon>201711281845586_Add Quetion Model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

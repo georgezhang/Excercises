@@ -32,7 +32,7 @@ namespace Excercises.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Exam exam = db.Exams.Find(id);
-            if (exam == null)
+            if (exam == null || exam.ApplicationUser.Id != UserID)
             {
                 return HttpNotFound();
             }
@@ -71,7 +71,7 @@ namespace Excercises.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Exam exam = db.Exams.Find(id);
-            if (exam == null)
+            if (exam == null || exam.ApplicationUser.Id != UserID)
             {
                 return HttpNotFound();
             }
@@ -87,7 +87,16 @@ namespace Excercises.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(exam).State = EntityState.Modified;
+                Exam currentExam = db.Exams.Find(exam.ExamID);
+
+                if (currentExam == null || currentExam.ApplicationUser.Id != UserID)
+                {
+                    return HttpNotFound();
+                }
+
+                currentExam.Name = exam.Name;
+                currentExam.Description = exam.Description;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -102,7 +111,7 @@ namespace Excercises.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Exam exam = db.Exams.Find(id);
-            if (exam == null)
+            if (exam == null || exam.ApplicationUser.Id != UserID)
             {
                 return HttpNotFound();
             }
@@ -115,6 +124,11 @@ namespace Excercises.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Exam exam = db.Exams.Find(id);
+            if (exam == null || exam.ApplicationUser.Id != UserID)
+            {
+                return HttpNotFound();
+            }
+
             db.Exams.Remove(exam);
             db.SaveChanges();
             return RedirectToAction("Index");

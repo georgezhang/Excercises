@@ -22,5 +22,6 @@ namespace Excercises.Models
         public string Description { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }
