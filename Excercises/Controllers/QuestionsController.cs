@@ -76,6 +76,8 @@ namespace Excercises.Controllers
                 return HttpNotFound();
             }
 
+            ViewBag.ExamID = ExamID;
+
             return View(question);
         }
 
@@ -141,6 +143,8 @@ namespace Excercises.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.ExamID = ExamID;
             return View(question);
         }
 
@@ -161,15 +165,20 @@ namespace Excercises.Controllers
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
 
-                if (question == null || question.Exam.ExamID != ExamID)
+                Question currentQuestion = db.Questions.Find(question.QuestionID);
+                if (question == null || currentQuestion == null || currentQuestion.Exam.ExamID != ExamID)
                 {
                     return HttpNotFound();
                 }
+                currentQuestion.QuestionText = question.QuestionText;
+                currentQuestion.Hints = question.Hints;
+                currentQuestion.Answer = question.Answer;
+                currentQuestion.Score = question.Score;
 
-                db.Entry(question).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index", new { ExamID = ExamID });
             }
+
             return View(question);
         }
 
@@ -194,6 +203,8 @@ namespace Excercises.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.ExamID = ExamID;
             return View(question);
         }
 

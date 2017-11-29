@@ -25,3 +25,7 @@ textarea {
 #logoutForm li {
     float: left;
 }
+input#SearchText {
+    width: 80%;
+    max-width: 80%;
+}

@@ -29,5 +29,6 @@ namespace Excercises.Models
         public int Score { get; set; }
 
         public virtual Exam Exam { get; set; }
+        public virtual ICollection<QuestionTaken> QuestionTakens { get; set; }
     }
 }

@@ -1,14 +1,11 @@
-﻿@model IEnumerable<Excercises.Models.Exam>
+﻿@model IEnumerable<Excercises.Models.ExamViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Find an Exam";
 }
 
 <h2>Exams</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 @using (Html.BeginForm())
 {
     @Html.TextBox("SearchText", null, new { placeholder = "Find your Exam here!" })
@@ -23,7 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>Actions</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner)
+        </th>
         <th></th>
     </tr>
 
@@ -36,12 +35,10 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ExamID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ExamID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ExamID })
+            @Html.DisplayFor(modelItem => item.Owner)
         </td>
         <td>
-            @Html.ActionLink("Edit Questions", "Index", "Questions", new { ExamID = item.ExamID }, null)
+            @Html.ActionLink("Start Test", "StartQuestion", "TakeExam", new { ExamID = item.ExamID }, null)
         </td>
     </tr>
 }

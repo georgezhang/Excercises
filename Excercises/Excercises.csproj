@@ -59,6 +59,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -67,6 +70,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -205,6 +211,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Examples\PlaygroundController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\TakeExamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +223,14 @@
     <Compile Include="Migrations\201711281845586_Add Quetion Model.Designer.cs">
       <DependentUpon>201711281845586_Add Quetion Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711291833514_Add Model UserExam and QuestionTaken.cs" />
+    <Compile Include="Migrations\201711291833514_Add Model UserExam and QuestionTaken.Designer.cs">
+      <DependentUpon>201711291833514_Add Model UserExam and QuestionTaken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711292234146_Modified columns.cs" />
+    <Compile Include="Migrations\201711292234146_Modified columns.Designer.cs">
+      <DependentUpon>201711292234146_Modified columns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels\AccountViewModels.cs" />
     <Compile Include="Models\App\Exam.cs" />
@@ -225,7 +240,12 @@
     <Compile Include="Models\AccountModels\ManageViewModels.cs" />
     <Compile Include="Models\Examples\Example_StoreProcedure\PlaygroundRepository.cs" />
     <Compile Include="Models\ModelHelpers\UserExtension.cs" />
-    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\App\Question.cs" />
+    <Compile Include="Models\App\QuestionTaken.cs" />
+    <Compile Include="Models\App\UserExam.cs" />
+    <Compile Include="Models\ViewModels\TakeExamViewModels.cs" />
+    <Compile Include="Models\ViewModels\MyAnswerViewModel.cs" />
+    <Compile Include="Models\ViewModels\ExamViewModels.cs" />
     <Compile Include="Models\ViewModels\PlaygroundViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -422,6 +442,9 @@
     <Content Include="Views\Questions\Details.cshtml" />
     <Content Include="Views\Questions\Edit.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\Exams\Public.cshtml" />
+    <Content Include="Views\TakeExam\StartQuestion.cshtml" />
+    <Content Include="Views\TakeExam\TakeExamDone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -450,6 +473,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711281845586_Add Quetion Model.resx">
       <DependentUpon>201711281845586_Add Quetion Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291833514_Add Model UserExam and QuestionTaken.resx">
+      <DependentUpon>201711291833514_Add Model UserExam and QuestionTaken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711292234146_Modified columns.resx">
+      <DependentUpon>201711292234146_Modified columns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

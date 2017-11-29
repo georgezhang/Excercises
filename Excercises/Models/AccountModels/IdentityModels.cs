@@ -22,6 +22,7 @@ namespace Excercises.Models
 
         //add the relationship here
         public virtual ICollection<Exam> Exams { get; set; }
-        
+        public virtual ICollection<UserExam> UserExams { get; set; }
+
     }
 }

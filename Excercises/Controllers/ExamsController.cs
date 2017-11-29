@@ -16,11 +16,36 @@ namespace Excercises.Controllers
     {
 
         // GET: Exams
-        public ActionResult Index()
+        public ActionResult Index(string SearchText)
         {
-            IEnumerable<Exam> exams = db.Exams
-                                        .Where(m => m.ApplicationUser.Id == UserID)
-                                        .ToList();
+            var query = db.Exams.Where(m => m.ApplicationUser.Id == UserID);
+
+            if (SearchText != null && SearchText.Length > 0)
+            {
+                query = query.Where(m => m.Name.Contains(SearchText) || m.Description.Contains(SearchText));
+            }
+
+            IEnumerable<Exam> exams = query.ToList();
+
+            return View(exams);
+        }
+
+        // GET: Exams
+        [AllowAnonymous]
+        public ActionResult Public(string SearchText)
+        {
+            var query = db.Exams.Select(m => new ExamViewModel { ExamID = m.ExamID, Name = m.Name, Description = m.Description, Owner = m.ApplicationUser.NickName } );
+
+            if (SearchText != null && SearchText.Length > 0)
+            {
+                query = query.Where(m => m.Name.Contains(SearchText) || m.Description.Contains(SearchText));
+            }
+
+            IEnumerable<ExamViewModel> exams = query
+                                    .Take(100)
+                                    .OrderByDescending(m => m.ExamID)
+                                    .ToList();
+
             return View(exams);
         }
 

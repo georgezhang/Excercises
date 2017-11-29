@@ -26,6 +26,8 @@ namespace Excercises.Models
         public virtual DbSet<Person> Persons { get; set; }
         public virtual DbSet<Exam> Exams { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<UserExam> UserExams { get; set; }
+        public virtual DbSet<QuestionTaken> QuestionTakens { get; set; }
 
         public static ApplicationDBContext Create()
         {
